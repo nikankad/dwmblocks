@@ -1,5 +1,7 @@
 # dwmblocks
 Modular status bar for dwm written in c.
+view the (colored branch)[https://github.com/nikankad/dwmblocks/tree/colored-version] to have the same dwmblock config with colored blocks.
+you will first need the (Status2d)[https://dwm.suckless.org/patches/status2d/] patch in order for this to work.
 # usage
 To use dwmblocks first run 'make' and then install it with 'sudo make install'.
 After that you can put dwmblocks in your xinitrc or other startup script to have it start with dwm.
