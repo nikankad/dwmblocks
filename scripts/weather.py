@@ -7,39 +7,46 @@
 import requests, json, time
 
 # Enter your API key here
-# get your key from https://home.openweathermap.org/api_keys
-api_key = "[YOUR API KEY]"
+api_key = "YOUR API"
   
 # base_url variable to store url
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
   
 # Give city name
-city_name = "[YOUR CITY]"
+city_name = "YOUR CITY"
   
+# complete_url variable to store
+# complete url address
 complete_url = base_url + "appid=" + api_key + "&q=" + city_name
+  
+# get method of requests module
+# return response object
 response = requests.get(complete_url)
 
 # json method of response object 
 # convert json format data into
 # python format data
 x = response.json()
+# print(x)  
+# Now x contains list of nested dictionaries
+# Check the value of "cod" key is equal to
+# "404", means city is found otherwise,
+# city is not found
 if x["cod"] != "404":
   
+    # store the value of "main"
+    # key in variable y
     y = x["main"]
-    #from kelvin to celcius
+  
+    # store the value corresponding
+    # to the "temp" key of y
     current_temperature = int(round(y["temp"] - 273, 0))
-    #uncomment line below to make it from kelvin to farenheit
-    #current_temperature = int(round(1.8 * current_temperature + 32,0))
-  
-  
-    z = x["weather"]
-  
-    
-    weather_description = z[0]["description"]
-if(weather_description == "few clouds"):
-    icon = ""
 
 
-print("["+str(current_temperature)+"°]")
-  
-   
+if(current_temperature < 30):
+    current_temperature = "^c#C678DD^["+str(current_temperature)+"°]"
+else: 
+    current_temperature = "^c#E06C75^["+str(current_temperature)+"°]"
+
+
+print(current_temperature)

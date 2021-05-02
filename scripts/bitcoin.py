@@ -15,14 +15,13 @@ def is_connected():
             rate = int(data["bpi"]["USD"]["rate_float"])
             rate = round(rate, 0)
             rate = "{:,}".format(rate)
-            print("[:$"+rate+"]")
-
-            Connected = True           
+            print(f"^c#D19A66^[:$"+rate+"]")
+            break
+            Connected = True    
         except OSError:
             pass
-            print("[wifi not connected]")
+            print("^c#D19A66^[wifi not connected]")
             Connected = False
             time.sleep(1)
 
 is_connected()
-

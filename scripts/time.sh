@@ -1,5 +1,5 @@
 #!/bin/sh
-#format: month day hour:minute:second AM/PM (e.g  April 03 12:32:12 PM)
-CURRENTDATEONLY=`date +"%B %d %I:%M:%S %p"`
+CURRENTDATEONLY=`date +"%a %B %d %H:%M:%S"`
 
-echo [${CURRENTDATEONLY}]
+echo ^c#61afef^[${CURRENTDATEONLY}]
+
