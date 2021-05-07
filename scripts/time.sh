@@ -1,7 +1,12 @@
 #!/bin/sh
 
-#format for time is day(eg. Wed) month day hour:minute:second
-CURRENTDATEONLY=`date +"%a %B %d %H:%M:%S"`
+#24 hour format
+# CURRENTDATEONLY=`date +"%a %B %d %H:%M:%S"`
+#12 hour format
+CURRENTDATEONLY=`date +"%a %B %d %I:%M:%S %p"`
 
-echo ^c#61afef^[${CURRENTDATEONLY}]
+echo ^c#61AFEF^[${CURRENTDATEONLY}]
 
+case $BUTTON in
+     1) notify-send -t 2000 "$(uptime -p)" ;;
+esac

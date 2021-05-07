@@ -11,6 +11,6 @@ else
 fi
 
 case $BUTTON in
-     1) st nmtui & notify-send.sh $(iwgetid -r) ;;
-    
+     1) st nmtui & ;;
+     3) notify-send -t 2000 "$(iwgetid -r)" ;;
 esac
